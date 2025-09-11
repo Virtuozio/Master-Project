@@ -1,4 +1,4 @@
-package com.bestarchitecture.development
+package com.masterproject.staging
 import com.facebook.react.common.assets.ReactFontManager
 
 import android.app.Application

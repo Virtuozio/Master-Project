@@ -26,6 +26,7 @@
         <category android:name="android.intent.category.BROWSABLE"/>
         <data android:scheme="bestArchitecture"/>
         <data android:scheme="exp+obytesapp"/>
+        <data android:scheme="exp+master-project"/>
       </intent-filter>
     </activity>
   </application>

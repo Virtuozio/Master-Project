@@ -18,6 +18,7 @@ const z = require('zod');
 const packageJSON = require('./package.json');
 const path = require('path');
 const APP_ENV = process.env.APP_ENV ?? 'development';
+const SLUG_NAME = 'master-project';
 // eslint-disable-next-line no-undef
 const envPath = path.resolve(__dirname, `.env.${APP_ENV}`);
 
@@ -35,12 +36,12 @@ require('dotenv').config({
 
 // TODO: Replace these values with your own
 
-const BUNDLE_ID = 'com.bestarchitecture'; // ios bundle id
-const PACKAGE = 'com.bestarchitecture'; // android package name
-const NAME = 'bestArchitecture'; // app name
-const EXPO_ACCOUNT_OWNER = 'expo-owner'; // expo account owner
-const EAS_PROJECT_ID = 'c3e1075b-6fe7-4686-aa49-35b46a229044'; // eas project id
-const SCHEME = 'bestArchitecture'; // app scheme
+const BUNDLE_ID = 'com.masterproject'; // ios bundle id
+const PACKAGE = 'com.masterproject'; // android package name
+const NAME = 'Trafic Signs Detection'; // app name
+const EXPO_ACCOUNT_OWNER = 'bodjech'; // expo account owner
+const EAS_PROJECT_ID = '5ac0ff65-d62a-41cd-b49d-5a42597904c0'; // eas project id
+const SCHEME = 'master-project'; // app scheme
 
 /**
  * We declare a function withEnvSuffix that will add a suffix to the variable name based on the APP_ENV
@@ -78,6 +79,7 @@ const client = z.object({
   BUNDLE_ID: z.string(),
   PACKAGE: z.string(),
   VERSION: z.string(),
+  SLUG_NAME: z.string(),
 
   // ADD YOUR CLIENT ENV VARS HERE
   API_URL: z.string(),
@@ -102,7 +104,7 @@ const _clientEnv = {
   BUNDLE_ID: withEnvSuffix(BUNDLE_ID),
   PACKAGE: withEnvSuffix(PACKAGE),
   VERSION: packageJSON.version,
-
+  SLUG_NAME: SLUG_NAME,
   // ADD YOUR ENV VARS HERE TOO
   API_URL: process.env.API_URL,
   VAR_NUMBER: Number(process.env.VAR_NUMBER),

@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace 'com.bestarchitecture.development'
+    namespace 'com.masterproject.staging'
     defaultConfig {
-        applicationId 'com.bestarchitecture.development'
+        applicationId 'com.masterproject.staging'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

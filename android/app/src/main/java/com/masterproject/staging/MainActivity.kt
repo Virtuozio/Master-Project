@@ -1,4 +1,4 @@
-package com.bestarchitecture.development
+package com.masterproject.staging
 import expo.modules.splashscreen.SplashScreenManager
 
 import android.os.Build

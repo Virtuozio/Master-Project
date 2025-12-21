@@ -1,12 +1,11 @@
-/* eslint-disable react/no-unstable-nested-components */
 import { Link, Redirect, SplashScreen, Tabs } from 'expo-router';
 import React, { useCallback, useEffect } from 'react';
 
 import { Pressable, Text } from '@/components/ui';
 import {
+  Camera as CameraIcon,
   Feed as FeedIcon,
   Settings as SettingsIcon,
-  Style as StyleIcon,
 } from '@/components/ui/icons';
 import { useAuth, useIsFirstTime } from '@/lib';
 
@@ -43,12 +42,12 @@ export default function TabLayout() {
       />
 
       <Tabs.Screen
-        name="style"
+        name="camera"
         options={{
-          title: 'Style',
+          title: 'Camera',
           headerShown: false,
-          tabBarIcon: ({ color }) => <StyleIcon color={color} />,
-          tabBarButtonTestID: 'style-tab',
+          tabBarIcon: ({ color }) => <CameraIcon color={color} />,
+          tabBarButtonTestID: 'camera-tab',
         }}
       />
       <Tabs.Screen

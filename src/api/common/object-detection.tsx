@@ -1,41 +1,38 @@
-// Це "Fake" сервіс. Саме тут у майбутньому буде завантаження моделі TensorFlow
-// import * as tf from '@tensorflow/tfjs';
-// import { bundleResourceIO } from '@tensorflow/tfjs-react-native';
-
 export type RecognitionResult = {
   label: string;
   confidence: number;
 };
 
-// Симуляція затримки розпізнавання
-const MOCK_DELAY = 1000;
+// Імітуємо швидку роботу нейромережі (швидше ніж 1с для плавності)
+const MOCK_DELAY = 600;
+
+const TRAFFIC_SIGNS = [
+  'STOP',
+  'SPEED LIMIT 50',
+  'SPEED LIMIT 90',
+  'YIELD',
+  'NO ENTRY',
+  'PEDESTRIAN',
+  'PARKING',
+];
 
 export const detectObject = async (
-  imageUri: string
+  _imageUri: string
 ): Promise<RecognitionResult> => {
-  // Тут має бути логіка:
-  // 1. Resize image
-  // 2. Convert to Tensor
-  // 3. model.predict(tensor)
+  // Тут в майбутньому буде:
+  // const tensor = decodeJpeg(imageUri);
+  // const prediction = await trafficSignModel.predict(tensor);
 
-  console.log(`Analyzing image at: ${imageUri}`);
-
-  // Імітуємо роботу нейромережі
+  // Імітація обробки
   await new Promise((resolve) => setTimeout(resolve, MOCK_DELAY));
 
-  // Повертаємо рандомний результат для демонстрації UI
-  const mockObjects = [
-    'Cat 🐱',
-    'Laptop 💻',
-    'Coffee ☕',
-    'Plant 🌿',
-    'Code 🚀',
-  ];
-  const randomObj = mockObjects[Math.floor(Math.random() * mockObjects.length)];
-  const randomConf = (Math.random() * (0.99 - 0.7) + 0.7).toFixed(2);
+  // Логіка для демо: повертаємо випадковий знак
+  const randomSign =
+    TRAFFIC_SIGNS[Math.floor(Math.random() * TRAFFIC_SIGNS.length)];
+  const randomConf = (Math.random() * (0.99 - 0.85) + 0.85).toFixed(2);
 
   return {
-    label: randomObj,
+    label: randomSign,
     confidence: Number(randomConf),
   };
 };
